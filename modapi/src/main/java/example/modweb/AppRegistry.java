@@ -19,8 +19,12 @@ public class AppRegistry {
 
     private Map<String, ModuleProvider> modules = new HashMap<String, ModuleProvider>();
     
+    @Inject
+    Instance<ModuleProvider> moduleProviders;
+    
     @PostConstruct @Inject 
-    public void postConstruct(Instance<ModuleProvider> moduleProviders) {
+    public void postConstruct() {
+        
         for (ModuleProvider provider: moduleProviders) {
             modules.put(provider.getId(), provider);
         }

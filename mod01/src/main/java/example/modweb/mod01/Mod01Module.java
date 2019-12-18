@@ -9,7 +9,7 @@ public class Mod01Module implements ModuleProvider {
 
     @Override
     public String getName() {
-        return "Module 01";
+        return "Module 01.x";
     }
 
     @Override
